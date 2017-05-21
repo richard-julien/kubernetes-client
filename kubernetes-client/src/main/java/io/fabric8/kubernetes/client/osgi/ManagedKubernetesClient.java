@@ -63,6 +63,9 @@ import io.fabric8.kubernetes.api.model.SecretList;
 import io.fabric8.kubernetes.api.model.ServiceAccount;
 import io.fabric8.kubernetes.api.model.ServiceAccountList;
 import io.fabric8.kubernetes.api.model.ServiceList;
+import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClassList;
 import io.fabric8.kubernetes.client.Adapters;
 import io.fabric8.kubernetes.client.BaseClient;
 import io.fabric8.kubernetes.client.Config;
@@ -285,7 +288,7 @@ public class ManagedKubernetesClient extends BaseClient implements NamespacedKub
   public NonNamespaceOperation<Namespace, NamespaceList, DoneableNamespace, Resource<Namespace, DoneableNamespace>> namespaces() {
     return delegate.namespaces();
   }
-
+  
   public MixedOperation<ServiceAccount, ServiceAccountList, DoneableServiceAccount, Resource<ServiceAccount, DoneableServiceAccount>> serviceAccounts() {
     return delegate.serviceAccounts();
   }

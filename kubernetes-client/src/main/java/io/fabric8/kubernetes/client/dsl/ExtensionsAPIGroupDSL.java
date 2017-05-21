@@ -40,6 +40,9 @@ import io.fabric8.kubernetes.api.model.extensions.ReplicaSet;
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList;
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource;
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList;
+import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClassList;
 import io.fabric8.kubernetes.client.Client;
 
 public interface ExtensionsAPIGroupDSL extends Client {
@@ -56,7 +59,9 @@ public interface ExtensionsAPIGroupDSL extends Client {
   MixedOperation<NetworkPolicy, NetworkPolicyList, DoneableNetworkPolicy, Resource<NetworkPolicy, DoneableNetworkPolicy>> networkPolicies();
 
   MixedOperation<DaemonSet, DaemonSetList, DoneableDaemonSet, Resource<DaemonSet, DoneableDaemonSet>> daemonSets();
-
+  
+  MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses();
+  
   NonNamespaceOperation<ThirdPartyResource, ThirdPartyResourceList, DoneableThirdPartyResource, Resource<ThirdPartyResource, DoneableThirdPartyResource>> thirdPartyResources();
 
   MixedOperation<ReplicaSet, ReplicaSetList, DoneableReplicaSet, RollableScalableResource<ReplicaSet, DoneableReplicaSet>> replicaSets();

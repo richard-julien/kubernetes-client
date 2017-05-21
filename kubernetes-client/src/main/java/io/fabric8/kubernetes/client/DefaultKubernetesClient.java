@@ -85,8 +85,7 @@ public class DefaultKubernetesClient extends BaseClient implements NamespacedKub
     return new NamespaceVisitFromServerGetWatchDeleteRecreateWaitApplicableListImpl(httpClient, getConfiguration(), getNamespace(), null, false, false, new ArrayList<Visitor>(), s, null, null, -1, false) {
     };
   }
-
-
+  
   @Override
   public NamespaceVisitFromServerGetWatchDeleteRecreateWaitApplicable<HasMetadata, Boolean> resource(HasMetadata item) {
     return new NamespaceVisitFromServerGetWatchDeleteRecreateWaitApplicableImpl(httpClient, getConfiguration(), getNamespace(), null, false, false, new ArrayList<Visitor>(), item, -1, false) {
@@ -113,7 +112,7 @@ public class DefaultKubernetesClient extends BaseClient implements NamespacedKub
   public NonNamespaceOperation<Namespace, NamespaceList, DoneableNamespace, Resource<Namespace, DoneableNamespace>> namespaces() {
     return new NamespaceOperationsImpl(httpClient, getConfiguration());
   }
-
+  
   @Override
   public NonNamespaceOperation<Node, NodeList, DoneableNode, Resource<Node, DoneableNode>> nodes() {
     return new NodeOperationsImpl(httpClient, getConfiguration());

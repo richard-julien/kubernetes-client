@@ -39,15 +39,11 @@ import io.fabric8.kubernetes.api.model.extensions.ReplicaSet;
 import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList;
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource;
 import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList;
+import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClassList;
 import io.fabric8.kubernetes.client.dsl.*;
-import io.fabric8.kubernetes.client.dsl.internal.DaemonSetOperationsImpl;
-import io.fabric8.kubernetes.client.dsl.internal.DeploymentOperationsImpl;
-import io.fabric8.kubernetes.client.dsl.internal.HorizontalPodAutoscalerOperationsImpl;
-import io.fabric8.kubernetes.client.dsl.internal.IngressOperationsImpl;
-import io.fabric8.kubernetes.client.dsl.internal.JobOperationsImpl;
-import io.fabric8.kubernetes.client.dsl.internal.NetworkPolicyOperationsImpl;
-import io.fabric8.kubernetes.client.dsl.internal.ReplicaSetOperationsImpl;
-import io.fabric8.kubernetes.client.dsl.internal.ThirdPartyResourceOperationsImpl;
+import io.fabric8.kubernetes.client.dsl.internal.*;
 import okhttp3.OkHttpClient;
 
 public class ExtensionsAPIGroupClient extends BaseClient implements ExtensionsAPIGroupDSL {
@@ -101,5 +97,9 @@ public class ExtensionsAPIGroupClient extends BaseClient implements ExtensionsAP
 
   public MixedOperation<HorizontalPodAutoscaler, HorizontalPodAutoscalerList, DoneableHorizontalPodAutoscaler, Resource<HorizontalPodAutoscaler, DoneableHorizontalPodAutoscaler>> horizontalPodAutoscalers() {
     return new HorizontalPodAutoscalerOperationsImpl(httpClient, getConfiguration(), getNamespace());
+  }
+  
+  public MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses() {
+    return new StorageClassOperationsImpl(httpClient, getConfiguration(), getNamespace());
   }
 }
