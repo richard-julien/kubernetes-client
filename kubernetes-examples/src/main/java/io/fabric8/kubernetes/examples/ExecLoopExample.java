@@ -15,24 +15,18 @@
  */
   package io.fabric8.kubernetes.examples;
 
-  import io.fabric8.kubernetes.client.Callback;
-  import io.fabric8.kubernetes.client.Config;
-  import io.fabric8.kubernetes.client.ConfigBuilder;
-  import io.fabric8.kubernetes.client.KubernetesClientException;
-  import io.fabric8.kubernetes.client.dsl.ExecListener;
-  import io.fabric8.kubernetes.client.dsl.ExecWatch;
-  import io.fabric8.kubernetes.client.utils.InputStreamPumper;
-  import io.fabric8.openshift.client.DefaultOpenShiftClient;
-  import io.fabric8.openshift.client.OpenShiftClient;
-  import okhttp3.Response;
+import io.fabric8.kubernetes.client.Callback;
+import io.fabric8.kubernetes.client.Config;
+import io.fabric8.kubernetes.client.ConfigBuilder;
+import io.fabric8.kubernetes.client.DefaultKubernetesClient;
+import io.fabric8.kubernetes.client.dsl.ExecListener;
+import io.fabric8.kubernetes.client.dsl.ExecWatch;
+import io.fabric8.kubernetes.client.utils.InputStreamPumper;
 
-  import java.io.IOException;
-  import java.util.concurrent.CountDownLatch;
-  import java.util.concurrent.ExecutorService;
-  import java.util.concurrent.Executors;
-  import java.util.concurrent.Future;
-  import java.util.concurrent.ScheduledExecutorService;
-  import java.util.concurrent.TimeUnit;
+import okhttp3.Response;
+
+import java.io.IOException;
+import java.util.concurrent.*;
 
 /**
  * @Author: Angel Misevski (https://github.com/amisevsk).
@@ -56,7 +50,7 @@ public class ExecLoopExample {
         .build();
 
       ScheduledExecutorService executorService = Executors.newScheduledThreadPool(20);
-      try (OpenShiftClient client = new DefaultOpenShiftClient(config)) {
+      try (DefaultKubernetesClient client = new DefaultKubernetesClient(config)) {
         for (int i = 0; i < 10; System.out.println("i=" + i), i++) {
           ExecWatch watch = null;
           InputStreamPumper pump = null;

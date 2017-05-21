@@ -24,7 +24,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.fabric8</groupId>
+  <groupId>io.openrb</groupId>
   <artifactId>kubernetes-client</artifactId>
   <name>Fabric8 :: Kubernetes :: Java Client</name>
   <packaging>jar</packaging>
@@ -153,7 +153,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>io.fabric8</groupId>
+      <groupId>io.openrb</groupId>
       <artifactId>kubernetes-model</artifactId>
       <version>${kubernetes.model.version}</version>
     </dependency>

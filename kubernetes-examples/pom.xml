@@ -24,7 +24,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.fabric8</groupId>
+  <groupId>io.openrb</groupId>
   <artifactId>kubernetes-examples</artifactId>
   <packaging>jar</packaging>
   <name>Fabric8 :: Kubernetes :: Client Examples</name>
@@ -36,8 +36,8 @@
   </properties>
   <dependencies>
     <dependency>
-      <groupId>io.fabric8</groupId>
-      <artifactId>openshift-client</artifactId>
+      <groupId>io.openrb</groupId>
+      <artifactId>kubernetes-client</artifactId>
       <version>${project.version}</version>
     </dependency>
 
