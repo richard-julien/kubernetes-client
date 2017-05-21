@@ -16,7 +16,8 @@
     limitations under the License.
 
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.sonatype.oss</groupId>
@@ -38,8 +39,7 @@
     </license>
   </licenses>
 
-  <!-- including A developer as it's required by the maven poms going into
-    central -->
+  <!-- including A developer as it's required by the maven poms going into central -->
   <developers>
     <developer>
       <id>geeks</id>
@@ -48,21 +48,6 @@
       <organizationUrl>http://fabric8.io/</organizationUrl>
     </developer>
   </developers>
-
-  <scm>
-    <connection>scm:git:git@github.com:fabric8io/kubernetes-client.git</connection>
-    <developerConnection>scm:git:git@github.com:fabric8io/kubernetes-client.git</developerConnection>
-    <url>http://github.com/fabric8io/kubernetes-client/</url>
-    <tag>${project.version}</tag>
-  </scm>
-
-  <distributionManagement>
-    <repository>
-      <id>oss-sonatype-staging</id>
-      <name>Sonatype Staging Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-    </repository>
-  </distributionManagement>
 
   <properties>
     <kubernetes.model.version>1.0.0-SNAPSHOT</kubernetes.model.version>
