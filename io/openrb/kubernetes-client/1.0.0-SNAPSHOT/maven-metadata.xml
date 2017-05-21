@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>io.openrb</groupId>
+  <artifactId>kubernetes-client</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20170521.201218</timestamp>
+      <buildNumber>3</buildNumber>
+    </snapshot>
+    <lastUpdated>20170521201218</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0.0-20170521.201218-3</value>
+        <updated>20170521201218</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0.0-20170521.201218-3</value>
+        <updated>20170521201218</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>bundle</classifier>
+        <extension>jar</extension>
+        <value>1.0.0-20170521.201218-3</value>
+        <updated>20170521201218</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
