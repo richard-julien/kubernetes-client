@@ -1,7 +1,19 @@
 # Kubernetes Java Client 
 This client provides access to the full [Kubernetes](http://kubernetes.io/)
 
-## Usage
+## Maven
+```
+    <repositories>
+        <repository>
+            <id>kubernetes-client</id>
+            <url>https://raw.github.com/richard-julien/kubernetes-client/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+```
 
 ### Creating a client
 The easiest way to create a client is:
