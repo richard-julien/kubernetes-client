@@ -17,6 +17,9 @@ package io.fabric8.kubernetes.client;
 
 import io.fabric8.kubernetes.api.builder.Visitor;
 import io.fabric8.kubernetes.api.model.*;
+import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClass;
+import io.fabric8.kubernetes.api.storage.StorageClassList;
 import io.fabric8.kubernetes.client.dsl.*;
 import io.fabric8.kubernetes.client.dsl.internal.*;
 import io.fabric8.kubernetes.client.utils.Serialization;
@@ -171,6 +174,11 @@ public class DefaultKubernetesClient extends BaseClient implements NamespacedKub
   @Override
   public MixedOperation<LimitRange, LimitRangeList, DoneableLimitRange, Resource<LimitRange, DoneableLimitRange>> limitRanges() {
     return new LimitRangeOperationsImpl(httpClient, getConfiguration(), getNamespace());
+  }
+  
+  @Override
+  public MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses() {
+    return new StorageClassOperationsImpl(httpClient, getConfiguration(), getNamespace());
   }
 
   @Override

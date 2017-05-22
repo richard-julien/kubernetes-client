@@ -89,6 +89,7 @@ import io.fabric8.kubernetes.client.dsl.ParameterNamespaceListVisitFromServerGet
 import io.fabric8.kubernetes.client.dsl.PodResource;
 import io.fabric8.kubernetes.client.dsl.Resource;
 import io.fabric8.kubernetes.client.dsl.RollableScalableResource;
+import io.fabric8.kubernetes.client.dsl.internal.StorageClassOperationsImpl;
 import org.apache.felix.scr.annotations.Activate;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.ConfigurationPolicy;
@@ -333,6 +334,10 @@ public class ManagedKubernetesClient extends BaseClient implements NamespacedKub
 
   public MixedOperation<Secret, SecretList, DoneableSecret, Resource<Secret, DoneableSecret>> secrets() {
     return delegate.secrets();
+  }
+  
+  public MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses() {
+    return delegate.storageClasses();
   }
 
   @Override

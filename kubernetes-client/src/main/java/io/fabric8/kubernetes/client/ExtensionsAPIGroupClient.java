@@ -15,33 +15,10 @@
  */
 package io.fabric8.kubernetes.client;
 
-import io.fabric8.kubernetes.api.model.extensions.DaemonSet;
-import io.fabric8.kubernetes.api.model.extensions.DaemonSetList;
-import io.fabric8.kubernetes.api.model.extensions.Deployment;
-import io.fabric8.kubernetes.api.model.extensions.DeploymentList;
-import io.fabric8.kubernetes.api.model.extensions.DoneableDaemonSet;
-import io.fabric8.kubernetes.api.model.extensions.DoneableDeployment;
-import io.fabric8.kubernetes.api.model.extensions.DoneableHorizontalPodAutoscaler;
-import io.fabric8.kubernetes.api.model.extensions.DoneableIngress;
-import io.fabric8.kubernetes.api.model.extensions.DoneableNetworkPolicy;
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicy;
-import io.fabric8.kubernetes.api.model.extensions.NetworkPolicyList;
 import io.fabric8.kubernetes.api.model.DoneableJob;
-import io.fabric8.kubernetes.api.model.extensions.DoneableReplicaSet;
-import io.fabric8.kubernetes.api.model.extensions.DoneableThirdPartyResource;
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscaler;
-import io.fabric8.kubernetes.api.model.extensions.HorizontalPodAutoscalerList;
-import io.fabric8.kubernetes.api.model.extensions.Ingress;
-import io.fabric8.kubernetes.api.model.extensions.IngressList;
 import io.fabric8.kubernetes.api.model.Job;
 import io.fabric8.kubernetes.api.model.JobList;
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSet;
-import io.fabric8.kubernetes.api.model.extensions.ReplicaSetList;
-import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResource;
-import io.fabric8.kubernetes.api.model.extensions.ThirdPartyResourceList;
-import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
-import io.fabric8.kubernetes.api.storage.StorageClass;
-import io.fabric8.kubernetes.api.storage.StorageClassList;
+import io.fabric8.kubernetes.api.model.extensions.*;
 import io.fabric8.kubernetes.client.dsl.*;
 import io.fabric8.kubernetes.client.dsl.internal.*;
 import okhttp3.OkHttpClient;
@@ -97,9 +74,5 @@ public class ExtensionsAPIGroupClient extends BaseClient implements ExtensionsAP
 
   public MixedOperation<HorizontalPodAutoscaler, HorizontalPodAutoscalerList, DoneableHorizontalPodAutoscaler, Resource<HorizontalPodAutoscaler, DoneableHorizontalPodAutoscaler>> horizontalPodAutoscalers() {
     return new HorizontalPodAutoscalerOperationsImpl(httpClient, getConfiguration(), getNamespace());
-  }
-  
-  public MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses() {
-    return new StorageClassOperationsImpl(httpClient, getConfiguration(), getNamespace());
   }
 }
