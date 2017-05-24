@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>io.openrb</groupId>
-  <artifactId>kubernetes-client</artifactId>
+  <artifactId>kubernetes-model-generator</artifactId>
   <versioning>
     <versions>
       <version>1.0.0-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20170522191823</lastUpdated>
+    <lastUpdated>20170524104325</lastUpdated>
   </versioning>
 </metadata>
