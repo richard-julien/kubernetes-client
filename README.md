@@ -13,6 +13,14 @@ This client provides access to the full [Kubernetes](http://kubernetes.io/)
             </snapshots>
         </repository>
     </repositories>
+    
+    <dependencies>
+    		<dependency>
+    			<groupId>io.openrb</groupId>
+    			<artifactId>kubernetes-client</artifactId>
+    			<version>1.0.0-SNAPSHOT</version>
+    		</dependency>
+    </dependencies>
 ```
 
 ### Creating a client
