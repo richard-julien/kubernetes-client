@@ -76,6 +76,7 @@
           <message>Maven artifacts for ${project.version}</message>
           <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
           <branch>refs/heads/mvn-repo</branch>
+          <merge>true</merge>
         </configuration>
         <executions>
           <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->

@@ -63,6 +63,9 @@ import io.fabric8.kubernetes.api.model.SecretList;
 import io.fabric8.kubernetes.api.model.ServiceAccount;
 import io.fabric8.kubernetes.api.model.ServiceAccountList;
 import io.fabric8.kubernetes.api.model.ServiceList;
+import io.fabric8.kubernetes.api.model.extensions.DoneableStatefulSet;
+import io.fabric8.kubernetes.api.model.extensions.StatefulSet;
+import io.fabric8.kubernetes.api.model.extensions.StatefulSetList;
 import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
 import io.fabric8.kubernetes.api.storage.StorageClass;
 import io.fabric8.kubernetes.api.storage.StorageClassList;
@@ -339,7 +342,12 @@ public class ManagedKubernetesClient extends BaseClient implements NamespacedKub
   public MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses() {
     return delegate.storageClasses();
   }
-
+  
+  @Override
+  public MixedOperation<StatefulSet, StatefulSetList, DoneableStatefulSet, RollableScalableResource<StatefulSet, DoneableStatefulSet>> statefulSets() {
+    return delegate.statefulSets();
+  }
+  
   @Override
   public RootPaths rootPaths() {
     return delegate.rootPaths();

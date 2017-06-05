@@ -17,6 +17,9 @@ package io.fabric8.kubernetes.client;
 
 import io.fabric8.kubernetes.api.builder.Visitor;
 import io.fabric8.kubernetes.api.model.*;
+import io.fabric8.kubernetes.api.model.extensions.DoneableStatefulSet;
+import io.fabric8.kubernetes.api.model.extensions.StatefulSet;
+import io.fabric8.kubernetes.api.model.extensions.StatefulSetList;
 import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
 import io.fabric8.kubernetes.api.storage.StorageClass;
 import io.fabric8.kubernetes.api.storage.StorageClassList;
@@ -180,7 +183,12 @@ public class DefaultKubernetesClient extends BaseClient implements NamespacedKub
   public MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses() {
     return new StorageClassOperationsImpl(httpClient, getConfiguration(), getNamespace());
   }
-
+  
+  @Override
+  public MixedOperation<StatefulSet, StatefulSetList, DoneableStatefulSet, RollableScalableResource<StatefulSet, DoneableStatefulSet>> statefulSets() {
+    return new StatefulSetOperationsImpl(httpClient, getConfiguration(), getNamespace());
+  }
+  
   @Override
   public NamespacedKubernetesClient inNamespace(String namespace)
   {

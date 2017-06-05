@@ -17,11 +17,13 @@
 package io.fabric8.kubernetes.client;
 
 import io.fabric8.kubernetes.api.model.*;
+import io.fabric8.kubernetes.api.model.extensions.DoneableStatefulSet;
+import io.fabric8.kubernetes.api.model.extensions.StatefulSet;
+import io.fabric8.kubernetes.api.model.extensions.StatefulSetList;
 import io.fabric8.kubernetes.api.storage.DoneableStorageClass;
 import io.fabric8.kubernetes.api.storage.StorageClass;
 import io.fabric8.kubernetes.api.storage.StorageClassList;
 import io.fabric8.kubernetes.client.dsl.*;
-import io.fabric8.kubernetes.client.dsl.internal.StorageClassOperationsImpl;
 
 import java.io.InputStream;
 import java.util.Collection;
@@ -79,4 +81,6 @@ public interface KubernetesClient extends Client {
   MixedOperation<LimitRange, LimitRangeList, DoneableLimitRange, Resource<LimitRange, DoneableLimitRange>> limitRanges();
   
   MixedOperation<StorageClass, StorageClassList, DoneableStorageClass, Resource<StorageClass, DoneableStorageClass>> storageClasses();
+  
+  MixedOperation<StatefulSet, StatefulSetList, DoneableStatefulSet, RollableScalableResource<StatefulSet, DoneableStatefulSet>> statefulSets();
 }
